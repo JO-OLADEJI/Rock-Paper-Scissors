@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@mixin flexer($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.entire-screen {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(54, 54, 54);
+    overflow: hidden;
+
+    .container {
+        width: 98vw;
+        margin: auto;
+        height: 97vh;
+        margin-top: 1.5vh;
+        border-radius: 1.5rem;
+        background-color: rgb(27, 27, 27);
+        border: 2px solid rgb(255, 128, 55);
+
+        .image-section {
+            height: 60%;
+            width: 90%;
+            margin: auto;
+            @include flexer(row, space-between, center);
+
+            .card {
+                border: 1px solid rgb(255, 94, 0);
+                height: 90%;
+                width: 23%;
+                border-radius: 1rem;
+                cursor: pointer;
+                transition: transform ease .5s;
+                position: relative;
+                animation: fade ease 1s;
+
+                &:hover {
+                    border: 2px solid rgb(255, 128, 55);
+                    transform: translate(0, -10px);
+                    box-shadow: 2px 5px 5px rgb(43, 42, 42);
+                }
+
+                &:hover > img {
+                    left: 50%;
+                    transform: translate(-50%, -5rem);
+                }
+                
+                .white-background {
+                    height: 30%;
+                    width: 100%
+                }
+
+                .yellow-background {
+                    height: 70%;
+                    width: 100%;
+                    background-color: rgb(255, 128, 55);
+                    border-bottom-left-radius: 1rem;
+                    border-bottom-right-radius: 1rem;
+                }
+
+                .image {
+                    height: 17rem;
+                    width: 17rem;
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    border-radius: 50%;
+                    transition: transform ease .5s;
+                }
+
+                h2 {
+                    position: absolute;
+                    top: 75%;
+                    left: 50%;
+                    font-size: 3rem;
+                    border: 2px solid black;
+                    padding: .3rem 1rem;
+                    transform: translateX(-50%);
+                    transition: all ease 0.5s;
+                    color: black;
+                    font-family: cursive;
+                }
+            }
+        }
+
+        .game-section {
+            height: 37%;
+            width: 97%;
+            margin: auto;
+            background-color: rgb(46, 46, 46);
+            border: 2px solid rgb(255, 128, 55);
+            border-radius: 1.5rem;
+            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: 1.5fr 3fr 1.5fr;
+            grid-template-rows: 1fr;
+
+            .user {
+                display: grid;
+                grid-template-columns: repeat(1fr);
+                grid-template-rows: 3fr 1fr;
+
+                #player-choices {
+                    img {
+                        cursor: pointer;
+                    }
+                }
+
+                .screen {
+                    @include flexer(row, center, center);
+                    position: relative;
+                    overflow: hidden;
+
+                    .name {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 12rem;
+                        font-family: cursive;
+                        color: rgba(255, 128, 55, 0.233);
+                    }
+
+                    .display {
+                        width: 90%;
+                        height: 90%;
+                        border: 1px solid rgb(255, 128, 55);
+                        overflow: hidden;
+                        position: relative;
+                        @include flexer(row, center, center);
+
+                        #user-choice,
+                        #computer-choice {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            height: 12rem;
+                            width: 12rem;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                .choices {
+                    @include flexer(row, space-evenly, center);
+
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                        border: 1px solid rgb(255, 128, 55);
+                        border-radius: 50%;
+                        transition: transform ease .5s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            .score {
+                border: 1px solid rgb(255, 128, 55);
+                height: 70%;
+                width: 90%;
+                margin: auto;
+                @include flexer(row, center, center);
+
+                h2 {
+                    font-size: 10rem;
+                    font-family: cursive;
+                }
+            }
+        }
+    }
+}
+

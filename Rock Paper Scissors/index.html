@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joshua Oladeji">
+    <link rel="icon" href="./images/scissors.png">
+    <title>Rock | Paper | Scissors</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <section class="entire-screen">
+        <div class="container">
+            <div class="image-section">
+                <div id="rock" class="card rock-holder">
+                    <div class="white-background"></div>
+                    <div class="yellow-background"></div>
+                    <img class="image" src="./images/rock.jpg" alt="">
+                    <h2>Rock</h2>
+                </div>
+                <div id="paper" class="card paper-holder">
+                    <div class="white-background"></div>
+                    <div class="yellow-background"></div>
+                    <img class="image" src="./images/paper.png" alt="">
+                    <h2>Paper</h2>
+                </div>
+                <div id="scissors" class="card scissors-holder">
+                    <div class="white-background"></div>
+                    <div class="yellow-background"></div>
+                    <img class="image" src="./images/scissors.png" alt="">
+                    <h2>Scissors</h2>
+                </div>
+            </div>
+
+            <div class="game-section"> 
+                <div class="user player">
+                    <div class="screen">
+                        <h2 class="name">User</h2>
+                        <div class="display" id="player-screen">
+                            <!-- <img id="user-choice" src="" alt=""> -->
+                        </div>
+                    </div>
+                    <div id="player-choices" class="choices">
+                        <img id="rock-small" src="./images/rock.jpg" alt="">
+                        <img id="paper-small" src="./images/paper.png" alt="">
+                        <img id="scissors-small" src="./images/scissors.png" alt="">
+                    </div>
+                </div>
+
+                <div class="score">
+                    <h2 id="outcome"></h2>
+                </div>
+                
+                <div class="user computer">
+                    <div class="screen">
+                        <h2 class="name">Bot</h2>
+                        <div class="display" id="computer-screen">
+                            <!-- <img id="computer-choice" src="" alt=""> -->
+                        </div>
+                    </div>
+                    <div class="choices">
+                        <img src="./images/rock.jpg" alt="">
+                        <img src="./images/paper.png" alt="">
+                        <img src="./images/scissors.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="./app.js"></script>
+</body>
+</html>
