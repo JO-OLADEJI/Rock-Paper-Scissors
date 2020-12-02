@@ -23,7 +23,7 @@ let zIndex = 1;
 // functions
 //------------------------------------------------------------
 
-// deternime computer's choice
+// determine computer's choice
 const random = () => {
     let choices = ['rock', 'paper', 'scissors'];
     let index = Math.floor(Math.random() * 3);
@@ -159,5 +159,3 @@ cardScissors.addEventListener('click', () => {
     placeImage(userChoice, computerchoice);
     displayText(odds);
 });
-
-
